@@ -12,6 +12,9 @@ class SongsController < ApplicationController
   end
 
   def create
+    # artist = Artist.find_or_create_by(name: song_params[:artist_name])   # Is it even necessary since we have methods in Song Model?
+    # @song = artist.songs.build(song_params)
+
     @song = Song.new(song_params)
 
     if @song.save
