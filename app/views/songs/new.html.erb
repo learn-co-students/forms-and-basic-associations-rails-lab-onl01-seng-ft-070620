@@ -11,10 +11,8 @@
   <%= f.select :genre_id, @genres.collect {|g| [g.name, g.id]} %>
   <br>
   <%= f.label :notes %> <br>
-  <%= f.text_field :notes_1 %>
-  <%= f.text_field :notes_2 %>
+  <input name='notes[]' id='song_notes_1'><br>
+  <input name='notes[]' id='song_notes_2'><br>
 
   <%= f.submit %>
 <% end %>
-
-

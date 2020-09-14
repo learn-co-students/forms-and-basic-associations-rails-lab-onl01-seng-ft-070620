@@ -10,12 +10,15 @@ class SongsController < ApplicationController
   def new
     @song = Song.new
     @genres = Genre.all
-    # @notes = Note.new, Note.new
+    @notes = Note.new, Note.new
   end
 
   def create
     binding.pry
     @song = Song.new(song_params)
+    params[:notes].each do |content|
+      @song.notes.build(content: content)
+    end
 
     if @song.save
       redirect_to @song
@@ -50,7 +53,7 @@ class SongsController < ApplicationController
   private
 
   def song_params
-    params.require(:song).permit(:title, :artist_name, :genre_id, notes: [])
+    params.require(:song).permit(:title, :artist_name, :genre_id)
   end
-end
 
+end
