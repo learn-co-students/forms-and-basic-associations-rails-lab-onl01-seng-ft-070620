@@ -1,5 +1,6 @@
-source 'https://rubygems.org'
+# frozen_string_literal: true
 
+source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails'
@@ -33,16 +34,14 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 group :development do
-# Access an IRB console on exception pages or by using <%= console %> in views
+  # Access an IRB console on exception pages or by using <%= console %> in views
 end
-
-
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-  gem 'spring'
-  gem 'rspec-rails', '~> 3.7'
   gem 'capybara'
+  gem 'rspec-rails', '~> 3.7'
+  gem 'spring'
 end
